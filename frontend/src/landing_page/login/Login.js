@@ -44,10 +44,13 @@ function Login() {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:3002/auth/login", {
-        email: email.trim().toLowerCase(),
-        password,
-      });
+      const response = await axios.post(
+        "https://finora-mdyk.onrender.com/auth/login",
+        {
+          email: email.trim().toLowerCase(),
+          password,
+        }
+      );
 
       const { token, user } = response.data;
 

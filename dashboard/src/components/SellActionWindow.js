@@ -27,17 +27,25 @@ const SellActionWindow = ({ uid, initialPrice = 0 }) => {
 
     // Save locally for instant offline availability in Orders view
     try {
-      const existingOrders = JSON.parse(localStorage.getItem("finora_orders") || "[]");
-      localStorage.setItem("finora_orders", JSON.stringify([orderData, ...existingOrders]));
+      const existingOrders = JSON.parse(
+        localStorage.getItem("finora_orders") || "[]"
+      );
+      localStorage.setItem(
+        "finora_orders",
+        JSON.stringify([orderData, ...existingOrders])
+      );
     } catch (e) {
       console.warn("Could not save order locally", e);
     }
 
     // Attempt backend persistence
     axios
-      .post("http://localhost:3002/newOrder", orderData)
+      .post("https://finora-mdyk.onrender.com/newOrder", orderData)
       .catch((err) => {
-        console.warn("Sell order saved locally (backend unreachable):", err.message);
+        console.warn(
+          "Sell order saved locally (backend unreachable):",
+          err.message
+        );
       });
 
     generalContext.closeSellWindow();
@@ -50,10 +58,23 @@ const SellActionWindow = ({ uid, initialPrice = 0 }) => {
   return (
     <div className="container sell-container" id="sell-window" draggable="true">
       <div className="sell-header">
-        <h3 style={{ color: "#fff", fontSize: "1rem", fontWeight: 500, margin: "0 0 6px 0" }}>
-          Sell {uid} <span style={{ fontSize: "0.65rem", opacity: 0.85 }}>x {stockQuantity} Qty</span>
+        <h3
+          style={{
+            color: "#fff",
+            fontSize: "1rem",
+            fontWeight: 500,
+            margin: "0 0 6px 0",
+          }}
+        >
+          Sell {uid}{" "}
+          <span style={{ fontSize: "0.65rem", opacity: 0.85 }}>
+            x {stockQuantity} Qty
+          </span>
         </h3>
-        <div className="market-options" style={{ color: "#fff", fontSize: "0.8rem" }}>
+        <div
+          className="market-options"
+          style={{ color: "#fff", fontSize: "0.8rem" }}
+        >
           <label style={{ marginRight: "12px", cursor: "pointer" }}>
             <input
               type="radio"
@@ -83,7 +104,8 @@ const SellActionWindow = ({ uid, initialPrice = 0 }) => {
         <button
           type="button"
           style={{
-            borderBottom: activeTab === "Regular" ? "2px solid #ff5722" : "none",
+            borderBottom:
+              activeTab === "Regular" ? "2px solid #ff5722" : "none",
             color: activeTab === "Regular" ? "#ff5722" : "#666",
             fontWeight: activeTab === "Regular" ? 600 : 400,
           }}
@@ -105,7 +127,10 @@ const SellActionWindow = ({ uid, initialPrice = 0 }) => {
       </div>
 
       <div className="regular-order">
-        <div className="order-validity" style={{ marginBottom: "12px", width: "100%" }}>
+        <div
+          className="order-validity"
+          style={{ marginBottom: "12px", width: "100%" }}
+        >
           <label style={{ marginRight: "16px" }}>
             <input
               type="radio"

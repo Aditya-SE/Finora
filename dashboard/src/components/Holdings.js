@@ -8,7 +8,7 @@ const Holdings = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allHoldings")
+      .get("https://finora-mdyk.onrender.com/allHoldings")
       .then((res) => {
         if (Array.isArray(res.data) && res.data.length > 0) {
           setAllHoldings(res.data);
@@ -17,7 +17,10 @@ const Holdings = () => {
         }
       })
       .catch((err) => {
-        console.warn("Backend not reachable for holdings, using mock data:", err.message);
+        console.warn(
+          "Backend not reachable for holdings, using mock data:",
+          err.message
+        );
         setAllHoldings(holdings);
       });
   }, []);
@@ -44,7 +47,10 @@ const Holdings = () => {
     0
   );
   const totalPL = currentValue - totalInvestment;
-  const plPercentage = totalInvestment > 0 ? ((totalPL / totalInvestment) * 100).toFixed(2) : "0.00";
+  const plPercentage =
+    totalInvestment > 0
+      ? ((totalPL / totalInvestment) * 100).toFixed(2)
+      : "0.00";
 
   return (
     <>
@@ -67,7 +73,8 @@ const Holdings = () => {
           <tbody>
             {allHoldings.map((stock, index) => {
               const curValue = (stock.price || 0) * (stock.qty || 0);
-              const isProfit = curValue - (stock.avg || 0) * (stock.qty || 0) >= 0.0;
+              const isProfit =
+                curValue - (stock.avg || 0) * (stock.qty || 0) >= 0.0;
               const profClass = isProfit ? "profit" : "loss";
               const dayClass = stock.isLoss ? "loss" : "profit";
 
@@ -79,7 +86,9 @@ const Holdings = () => {
                   <td>{Number(stock.price || 0).toFixed(2)}</td>
                   <td>{curValue.toFixed(2)}</td>
                   <td className={profClass}>
-                    {(curValue - (stock.avg || 0) * (stock.qty || 0)).toFixed(2)}
+                    {(curValue - (stock.avg || 0) * (stock.qty || 0)).toFixed(
+                      2
+                    )}
                   </td>
                   <td className={profClass}>{stock.net || "0.00%"}</td>
                   <td className={dayClass}>{stock.day || "0.00%"}</td>
@@ -93,19 +102,26 @@ const Holdings = () => {
       <div className="row">
         <div className="col">
           <h5>
-            {totalInvestment.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            {totalInvestment.toLocaleString("en-IN", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
           </h5>
           <p>Total investment</p>
         </div>
         <div className="col">
           <h5>
-            {currentValue.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
+            {currentValue.toLocaleString("en-IN", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
           </h5>
           <p>Current value</p>
         </div>
         <div className="col">
           <h5 className={totalPL >= 0 ? "profit" : "loss"}>
-            {totalPL >= 0 ? `+${totalPL.toFixed(2)}` : totalPL.toFixed(2)} ({plPercentage}%)
+            {totalPL >= 0 ? `+${totalPL.toFixed(2)}` : totalPL.toFixed(2)} (
+            {plPercentage}%)
           </h5>
           <p>P&L</p>
         </div>

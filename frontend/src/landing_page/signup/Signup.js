@@ -39,7 +39,9 @@ function Signup() {
       return;
     }
     if (!isValidEmail(email)) {
-      setError("Please enter a valid email or Gmail address (e.g., user@gmail.com).");
+      setError(
+        "Please enter a valid email or Gmail address (e.g., user@gmail.com)."
+      );
       return;
     }
     if (password.length < 6) {
@@ -55,11 +57,14 @@ function Signup() {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:3002/auth/signup", {
-        username: username.trim(),
-        email: email.trim().toLowerCase(),
-        password,
-      });
+      const response = await axios.post(
+        "https://finora-mdyk.onrender.com/auth/signup",
+        {
+          username: username.trim(),
+          email: email.trim().toLowerCase(),
+          password,
+        }
+      );
 
       const { token, user } = response.data;
 
@@ -81,7 +86,9 @@ function Signup() {
       if (err.response && err.response.data && err.response.data.error) {
         setError(err.response.data.error);
       } else {
-        setError("Unable to connect to Finora authentication service. Please ensure the backend is running.");
+        setError(
+          "Unable to connect to Finora authentication service. Please ensure the backend is running."
+        );
       }
       setLoading(false);
     }
@@ -94,7 +101,8 @@ function Signup() {
           Open a free Finora trading account
         </h1>
         <p className="text-muted fs-5 mt-2">
-          Invest in stocks, derivatives, and mutual funds with ₹0 brokerage on equity delivery
+          Invest in stocks, derivatives, and mutual funds with ₹0 brokerage on
+          equity delivery
         </p>
       </div>
 
@@ -208,7 +216,9 @@ function Signup() {
               </button>
 
               <div className="mt-4 pt-3 border-top text-center">
-                <span className="text-muted small">Already have an account? </span>
+                <span className="text-muted small">
+                  Already have an account?{" "}
+                </span>
                 <Link
                   to="/login"
                   className="text-primary text-decoration-none fw-semibold small"
@@ -220,13 +230,22 @@ function Signup() {
           </div>
 
           <div className="text-center mt-3">
-            <p className="text-muted" style={{ fontSize: "0.75rem", lineHeight: "1.4" }}>
+            <p
+              className="text-muted"
+              style={{ fontSize: "0.75rem", lineHeight: "1.4" }}
+            >
               By signing up, you agree to Finora’s{" "}
-              <a href="#terms" className="text-decoration-none text-muted fw-semibold">
+              <a
+                href="#terms"
+                className="text-decoration-none text-muted fw-semibold"
+              >
                 Terms of Service
               </a>{" "}
               and{" "}
-              <a href="#privacy" className="text-decoration-none text-muted fw-semibold">
+              <a
+                href="#privacy"
+                className="text-decoration-none text-muted fw-semibold"
+              >
                 Privacy Policy
               </a>
               .

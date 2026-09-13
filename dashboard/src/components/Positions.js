@@ -7,7 +7,7 @@ const Positions = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3002/allPositions")
+      .get("https://finora-mdyk.onrender.com/allPositions")
       .then((res) => {
         if (Array.isArray(res.data) && res.data.length > 0) {
           setAllPositions(res.data);
@@ -16,7 +16,10 @@ const Positions = () => {
         }
       })
       .catch((err) => {
-        console.warn("Backend not reachable for positions, using mock data:", err.message);
+        console.warn(
+          "Backend not reachable for positions, using mock data:",
+          err.message
+        );
         setAllPositions(positions);
       });
   }, []);
@@ -41,7 +44,8 @@ const Positions = () => {
           <tbody>
             {allPositions.map((stock, index) => {
               const curValue = (stock.price || 0) * (stock.qty || 0);
-              const isProfit = curValue - (stock.avg || 0) * (stock.qty || 0) >= 0.0;
+              const isProfit =
+                curValue - (stock.avg || 0) * (stock.qty || 0) >= 0.0;
               const profClass = isProfit ? "profit" : "loss";
               const dayClass = stock.isLoss ? "loss" : "profit";
 
@@ -53,7 +57,9 @@ const Positions = () => {
                   <td>{Number(stock.avg || 0).toFixed(2)}</td>
                   <td>{Number(stock.price || 0).toFixed(2)}</td>
                   <td className={profClass}>
-                    {(curValue - (stock.avg || 0) * (stock.qty || 0)).toFixed(2)}
+                    {(curValue - (stock.avg || 0) * (stock.qty || 0)).toFixed(
+                      2
+                    )}
                   </td>
                   <td className={dayClass}>{stock.day || "0.00%"}</td>
                 </tr>

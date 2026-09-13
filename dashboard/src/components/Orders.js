@@ -16,7 +16,7 @@ const Orders = () => {
     }
 
     axios
-      .get("http://localhost:3002/allOrders")
+      .get("https://finora-mdyk.onrender.com/allOrders")
       .then((res) => {
         if (Array.isArray(res.data) && res.data.length > 0) {
           // Merge backend orders with unique local orders
@@ -37,7 +37,10 @@ const Orders = () => {
         }
       })
       .catch((err) => {
-        console.warn("Could not fetch orders from backend, showing local:", err.message);
+        console.warn(
+          "Could not fetch orders from backend, showing local:",
+          err.message
+        );
         setAllOrders(localOrders);
       })
       .finally(() => {
@@ -144,7 +147,9 @@ const Orders = () => {
                         </span>
                       </td>
                       <td style={{ fontWeight: 600 }}>{order.name}</td>
-                      <td style={{ color: "#666" }}>{order.product || "CNC"}</td>
+                      <td style={{ color: "#666" }}>
+                        {order.product || "CNC"}
+                      </td>
                       <td>{order.qty}</td>
                       <td>₹{Number(order.price || 0).toFixed(2)}</td>
                       <td>
