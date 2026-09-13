@@ -63,7 +63,7 @@ function Login() {
       }
 
       // Seamless redirect to Dashboard (port 3001) passing token
-      const dashboardUrl = `http://localhost:3001?token=${encodeURIComponent(
+      const dashboardUrl = `https://finora-dashboard-0jdh.onrender.com?token=${encodeURIComponent(
         token
       )}&user=${encodeURIComponent(JSON.stringify(user))}`;
 

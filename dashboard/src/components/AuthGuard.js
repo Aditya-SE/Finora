@@ -37,7 +37,8 @@ const AuthGuard = ({ children }) => {
       setChecking(false);
       // Automatically redirect to frontend login after a short delay
       const redirectTimer = setTimeout(() => {
-        window.location.href = "http://localhost:3000/login";
+        window.location.href =
+          "https://finora-frontend-d720.onrender.com/login";
       }, 1500);
       return () => clearTimeout(redirectTimer);
     }
@@ -51,7 +52,8 @@ const AuthGuard = ({ children }) => {
           justifyContent: "center",
           alignItems: "center",
           height: "100vh",
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          fontFamily:
+            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
           color: "#555",
         }}
       >
@@ -69,7 +71,8 @@ const AuthGuard = ({ children }) => {
           justifyContent: "center",
           alignItems: "center",
           height: "100vh",
-          fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          fontFamily:
+            "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
           backgroundColor: "#f9f9f9",
           padding: "20px",
           textAlign: "center",
@@ -102,7 +105,9 @@ const AuthGuard = ({ children }) => {
           >
             🔒
           </div>
-          <h2 style={{ fontSize: "1.25rem", color: "#222", marginBottom: "8px" }}>
+          <h2
+            style={{ fontSize: "1.25rem", color: "#222", marginBottom: "8px" }}
+          >
             Access Restricted
           </h2>
           <p
@@ -113,8 +118,8 @@ const AuthGuard = ({ children }) => {
               marginBottom: "20px",
             }}
           >
-            You must be logged in to your Finora account to access the trading terminal.
-            Redirecting you to the login page...
+            You must be logged in to your Finora account to access the trading
+            terminal. Redirecting you to the login page...
           </p>
           <a
             href="http://localhost:3000/login"

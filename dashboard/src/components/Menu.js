@@ -38,7 +38,7 @@ const Menu = () => {
       console.warn("Logout error:", err);
     }
     // Redirect to Finora frontend home page
-    window.location.href = "http://localhost:3000";
+    window.location.href = "https://finora-frontend-d720.onrender.com";
   };
 
   const isSelected = (path) => {
@@ -53,7 +53,14 @@ const Menu = () => {
 
   return (
     <div className="menu-container">
-      <Link to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+      <Link
+        to="/"
+        style={{
+          textDecoration: "none",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
         <img src="logo.png" alt="Finora" style={{ width: "40px" }} />
       </Link>
       <div className="menus">
@@ -155,7 +162,8 @@ const Menu = () => {
                     style={{ textDecoration: "none", color: "#444" }}
                     onClick={() => setIsProfileDropdownOpen(false)}
                   >
-                    Funds: <strong style={{ color: "#387ed1" }}>₹4,043.10</strong>
+                    Funds:{" "}
+                    <strong style={{ color: "#387ed1" }}>₹4,043.10</strong>
                   </Link>
                 </li>
                 <li style={{ padding: "6px 0" }}>

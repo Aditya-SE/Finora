@@ -54,7 +54,9 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className={`${isNavCollapsed ? "collapse" : ""} navbar-collapse justify-content-end`}
+          className={`${
+            isNavCollapsed ? "collapse" : ""
+          } navbar-collapse justify-content-end`}
           id="navbarSupportedContent"
         >
           <ul className="navbar-nav mb-2 mb-lg-0 align-items-lg-center">
@@ -63,7 +65,7 @@ function Navbar() {
                 <li className="nav-item">
                   <a
                     className="nav-link fw-semibold text-primary"
-                    href="http://localhost:3001"
+                    href="https://finora-dashboard-0jdh.onrender.com"
                   >
                     Launch Dashboard →
                   </a>
