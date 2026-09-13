@@ -6,8 +6,8 @@ const Funds = () => {
     <>
       <div className="funds">
         <p>Instant, zero-cost fund transfers with UPI </p>
-        <Link className="btn btn-green">Add funds</Link>
-        <Link className="btn btn-blue">Withdraw</Link>
+        <Link to="/funds" className="btn btn-green">Add funds</Link>
+        <Link to="/funds" className="btn btn-blue">Withdraw</Link>
       </div>
 
       <div className="row">
@@ -77,7 +77,7 @@ const Funds = () => {
         <div className="col">
           <div className="commodity">
             <p>You don't have a commodity account</p>
-            <Link className="btn btn-blue">Open Account</Link>
+            <Link to="/funds" className="btn btn-blue">Open Account</Link>
           </div>
         </div>
       </div>

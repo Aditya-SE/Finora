@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Stats() {
   return (
-    <div className="container p-3">
-      <div className="row p-5">
-        <div className="col-6 p-5">
-          <h1 className="fs-2 mb-5">Trust with confidence</h1>
+    <div className="container py-3">
+      <div className="row p-3 p-md-5 align-items-center">
+        <div className="col-12 col-lg-6 p-3 p-md-4">
+          <h1 className="fs-2 mb-4">Trust with confidence</h1>
           <h2 className="fs-4">Customer-first always</h2>
           <p className="text-muted">
-            That's why 1.6+ crore customers trust Zerodha with ~ ₹6 lakh crores
+            That's why 1.6+ crore customers trust Finora with ~ ₹6 lakh crores
             of equity investments, making us India’s largest broker;
             contributing to 15% of daily retail exchange volumes in India.
           </p>
@@ -17,7 +18,7 @@ function Stats() {
             No gimmicks, spam, "gamification", or annoying push notifications.
             High quality apps that you use at your pace, the way you like.
           </p>
-          <h2 className="fs-4">The Zerodha universe</h2>
+          <h2 className="fs-4">The Finora universe</h2>
           <p className="text-muted">
             Not just an app, but a whole ecosystem. Our investments in 30+
             fintech startups offer you tailored services specific to your needs.
@@ -29,17 +30,30 @@ function Stats() {
             money.
           </p>
         </div>
-        <div className="col-6 p-5">
-          <img src="media/images/ecosystem.png " style={{ width: "90%" }}></img>
-          <div className="text-center">
-            <a href="" className="mx-5" style={{ textDecoration: "none" }}>
-              Explore our products
-              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-            </a>
-            <a href="" style={{ textDecoration: "none" }}>
-              Try Kite demo
-              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-            </a>
+        <div className="col-12 col-lg-6 p-3 p-md-4 text-center">
+          <img
+            src="media/images/ecosystem.png"
+            alt="Finora Ecosystem"
+            className="img-fluid mb-4"
+            style={{ maxWidth: "90%" }}
+          />
+          <div className="d-flex justify-content-center flex-wrap gap-3">
+            <Link
+              to="/product"
+              style={{ textDecoration: "none" }}
+              className="fw-medium"
+            >
+              Explore our products{" "}
+              <i className="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+            </Link>
+            <Link
+              to="/signup"
+              style={{ textDecoration: "none" }}
+              className="fw-medium"
+            >
+              Try Kite demo{" "}
+              <i className="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+            </Link>
           </div>
         </div>
       </div>
