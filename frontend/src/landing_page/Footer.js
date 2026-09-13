@@ -11,7 +11,7 @@ function Footer() {
           <div className="col ">
             <img src="media/images/logo.svg" style={{ width: "50%" }} />
             <p className="mt-3">
-              &copy; 2010 - 2026, Zerodha Broking Ltd. All rights reserved.
+              &copy; 2010 - 2026, Finora Broking Ltd. All rights reserved.
             </p>
             <div className="border-bottom mb-3"></div>
             <a
@@ -169,7 +169,7 @@ function Footer() {
               style={{ textDecoration: "none" }}
               className="text-muted d-inline-block mb-3"
             >
-              Z-Connect blog
+              F-Connect blog
             </a>
             <br />
             <a
@@ -220,7 +220,7 @@ function Footer() {
               style={{ textDecoration: "none" }}
               className="text-muted d-inline-block mb-3"
             >
-              Zerodha Cares (CSR)
+              Finora Cares (CSR)
             </a>
             <br />
             <a
@@ -228,7 +228,7 @@ function Footer() {
               style={{ textDecoration: "none" }}
               className="text-muted d-inline-block mb-3"
             >
-              Zerodha.tech
+              Finora.tech
             </a>
             <br />
             <a
@@ -321,14 +321,14 @@ function Footer() {
           style={{ fontSize: "12px", color: "rgb(150, 150, 150)" }}
         >
           <p>
-            Zerodha Broking Ltd.: Member of NSE, BSE, MCX & MSEI – SEBI
+            Finora Broking Ltd.: Member of NSE, BSE, MCX & MSEI – SEBI
             Registration no.: INZ000031633 CDSL/NSDL: Depository services
-            through Zerodha Broking Ltd. – SEBI Registration no.: IN-DP-431-2019
-            Registered Address: Zerodha Broking Ltd., #153/154, 4th Cross,
+            through Finora Broking Ltd. – SEBI Registration no.: IN-DP-431-2019
+            Registered Address: Finora Broking Ltd., #153/154, 4th Cross,
             Dollars Colony, Opp. Clarence Public School, J.P Nagar 4th Phase,
             Bengaluru - 560078, Karnataka, India. For any complaints pertaining
-            to securities broking please write to complaints@zerodha.com, for DP
-            related to dp@zerodha.com. Please ensure you carefully read the Risk
+            to securities broking please write to complaints@Finora.com, for DP
+            related to dp@Finora.com. Please ensure you carefully read the Risk
             Disclosure Document as prescribed by SEBI | ICF
           </p>
 
@@ -378,7 +378,7 @@ function Footer() {
             make payment in case of allotment. In case of non allotment the
             funds will remain in your bank account. As a business we don't give
             stock tips, and have not authorized anyone to trade on behalf of
-            others. If you find anyone claiming to be part of Zerodha and
+            others. If you find anyone claiming to be part of Finora and
             offering such services, please create a ticket here.
           </p>
 
@@ -393,7 +393,7 @@ function Footer() {
           <p>
             Fixed deposit products offered on this platform are third-party
             products (TPP) and are not Exchange traded products. These are
-            offered through Blostem Fintech Private Limited. Zerodha Broking
+            offered through Blostem Fintech Private Limited. Finora Broking
             Limited (SEBI Registration No.: INZ000031633) is acting solely as a
             distributor for these products. Any disputes arising with respect to
             such distribution activity will not have access to SEBI SCORES/ODR,

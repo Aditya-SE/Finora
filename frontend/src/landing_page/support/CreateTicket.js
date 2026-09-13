@@ -37,7 +37,7 @@ function CreateTicket() {
         <div className="col-4 p-5">
           <h4 className="">
             {" "}
-            <i class="fa-regular fa-circle-user"></i>&nbsp;Your Zerodha Your
+            <i class="fa-regular fa-circle-user"></i>&nbsp;Your Finora Your
             Profile
           </h4>
           <a href="" style={{ textDecoration: "none", lineHeight: "2.5" }}>

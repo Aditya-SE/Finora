@@ -4,7 +4,7 @@ function Universe() {
   return (
     <div className="container">
       <div className="row text-center mt-5">
-        <h1 className="fs-4 text-muted">The Zerodha Universe</h1>
+        <h1 className="fs-4 text-muted">The Finora Universe</h1>
         <p>
           Extend your trading and investment experience even further with our
           partner platforms

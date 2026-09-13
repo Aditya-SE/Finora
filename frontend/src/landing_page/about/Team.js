@@ -12,36 +12,41 @@ function Team() {
       >
         <div className="col-12 col-md-6 p-4 text-center">
           <img
-            src="media/images/nithinKamath.jpg"
+            src="media/images/mine.png"
             alt="Nithin Kamath"
             className="img-fluid mb-3"
             style={{ borderRadius: "100%", width: "50%", maxWidth: "260px" }}
           />
-          <h4 className="mt-2">Nithin Kamath</h4>
-          <h6 className="text-muted">Founder, CEO</h6>
+          <h4 className="mt-2">Patil Aditya</h4>
+          <h6 className="text-muted">Mern stack learner</h6>
         </div>
         <div className="col-12 col-md-6 p-4">
           <p>
-            Nithin bootstrapped and founded Finora in 2010 to overcome the
-            hurdles he faced during his decade long stint as a trader. Today,
-            Finora has changed the landscape of the Indian broking industry.
+            I'm a student passionate about technology and software development.
+            I enjoy learning new concepts, building projects, and improving my
+            skills through hands-on practice.
           </p>
           <p>
-            He is a member of the SEBI Secondary Market Advisory Committee
-            (SMAC) and the Market Data Advisory Committee (MDAC).
+            I'm currently learning the MERN stack and exploring full-stack
+            development. Alongside this, I practice DSA problems to strengthen
+            my logic and problem-solving skills.
           </p>
-          <p>Playing basketball is his zen</p>
+          <p>He loves playing chess.</p>
           <p>
             Connect on{" "}
-            <a href="#home" style={{ textDecoration: "none" }}>
-              Homepage
+            <a
+              href="https://www.instagram.com/_adi7ya._/"
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
+              Instagram
             </a>{" "}
             /{" "}
-            <a href="#tqa" style={{ textDecoration: "none" }}>
-              TradingQnA
-            </a>{" "}
-            /{" "}
-            <a href="#twitter" style={{ textDecoration: "none" }}>
+            <a
+              href="https://x.com/PatilAdityaN"
+              target="_blank"
+              style={{ textDecoration: "none" }}
+            >
               Twitter
             </a>
           </p>
