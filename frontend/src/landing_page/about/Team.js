@@ -13,7 +13,7 @@ function Team() {
         <div className="col-12 col-md-6 p-4 text-center">
           <img
             src="media/images/mine.png"
-            alt="Nithin Kamath"
+            alt="Aditya"
             className="img-fluid mb-3"
             style={{ borderRadius: "100%", width: "50%", maxWidth: "260px" }}
           />
