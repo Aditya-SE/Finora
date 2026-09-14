@@ -39,6 +39,42 @@ function Brokerage() {
           <a href="" style={{ textDecoration: "none" }}>
             <h3 className="fs-5">List of charges</h3>
           </a>
+          <ul
+            style={{
+              textAlign: "left",
+              lineHeight: "2.5",
+              fontSize: "13px",
+              listStyle: "none",
+              paddingLeft: "0",
+            }}
+            className="text-muted"
+          >
+            {" "}
+            <li>
+              {" "}
+              <strong>Equity Delivery:</strong> ₹0 brokerage{" "}
+            </li>{" "}
+            <li>
+              {" "}
+              <strong>Intraday:</strong> ₹20 or 0.03% per executed order{" "}
+            </li>{" "}
+            <li>
+              {" "}
+              <strong>Futures:</strong> ₹20 or 0.03% per executed order{" "}
+            </li>{" "}
+            <li>
+              {" "}
+              <strong>Options:</strong> ₹20 per executed order{" "}
+            </li>{" "}
+            <li>
+              {" "}
+              <strong>Account Opening:</strong> Free{" "}
+            </li>{" "}
+            <li>
+              {" "}
+              <strong>AMC:</strong> ₹0 for eligible accounts{" "}
+            </li>{" "}
+          </ul>{" "}
         </div>
       </div>
     </div>
