@@ -38,7 +38,15 @@ const Menu = () => {
       console.warn("Logout error:", err);
     }
     // Redirect to Finora frontend home page
-    window.location.href = "https://finora-frontend-d720.onrender.com";
+    const isLocal =
+      typeof window !== "undefined" &&
+      (window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1");
+
+    window.location.href = isLocal
+      ? "http://localhost:3000"
+      : process.env.REACT_APP_FRONTEND_URL ||
+        "https://finora-frontend-d720.onrender.com";
   };
 
   const isSelected = (path) => {

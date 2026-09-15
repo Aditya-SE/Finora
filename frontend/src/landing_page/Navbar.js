@@ -30,6 +30,31 @@ function Navbar() {
     window.location.href = "/";
   };
 
+  const getDashboardUrl = () => {
+    const isLocal =
+      typeof window !== "undefined" &&
+      (window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1");
+
+    const baseUrl = isLocal
+      ? "http://localhost:3001"
+      : process.env.REACT_APP_DASHBOARD_URL ||
+        "https://finora-dashboard-0jdh.onrender.com";
+
+    try {
+      const token = localStorage.getItem("finora_auth_token");
+      const user = localStorage.getItem("finora_user");
+
+      if (token) {
+        const userParam = user ? `&user=${encodeURIComponent(user)}` : "";
+        return `${baseUrl}?token=${encodeURIComponent(token)}${userParam}`;
+      }
+    } catch (err) {
+      console.warn("Error reading storage for dashboard url", err);
+    }
+    return baseUrl;
+  };
+
   return (
     <nav
       className="navbar navbar-expand-lg border-bottom sticky-top"
@@ -65,7 +90,11 @@ function Navbar() {
                 <li className="nav-item">
                   <a
                     className="nav-link fw-semibold text-primary"
-                    href="https://finora-dashboard-0jdh.onrender.com"
+                    href={getDashboardUrl()}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href = getDashboardUrl();
+                    }}
                   >
                     Launch Dashboard →
                   </a>

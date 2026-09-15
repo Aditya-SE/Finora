@@ -30,18 +30,15 @@ const AuthGuard = ({ children }) => {
     // 2. Check localStorage
     const savedToken = localStorage.getItem("finora_auth_token");
     if (savedToken && savedToken.trim().length > 0) {
+      // Valid token found — grant access to the dashboard
       setIsAuthenticated(true);
       setChecking(false);
-    } else {
-      setIsAuthenticated(false);
-      setChecking(false);
-      // Automatically redirect to frontend login after a short delay
-      const redirectTimer = setTimeout(() => {
-        window.location.href =
-          "https://finora-frontend-d720.onrender.com/login";
-      }, 1500);
-      return () => clearTimeout(redirectTimer);
+      return;
     }
+
+    // 3. No token found — block access
+    setIsAuthenticated(false);
+    setChecking(false);
   }, []);
 
   if (checking) {
@@ -122,7 +119,15 @@ const AuthGuard = ({ children }) => {
             terminal. Redirecting you to the login page...
           </p>
           <a
-            href="http://localhost:3000/login"
+            href={
+              typeof window !== "undefined" &&
+              (window.location.hostname === "localhost" ||
+                window.location.hostname === "127.0.0.1")
+                ? "http://localhost:3000/login"
+                : process.env.REACT_APP_FRONTEND_URL
+                ? `${process.env.REACT_APP_FRONTEND_URL}/login`
+                : "https://finora-frontend-d720.onrender.com/login"
+            }
             style={{
               display: "inline-block",
               backgroundColor: "#387ed1",

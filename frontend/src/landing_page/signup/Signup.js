@@ -76,8 +76,17 @@ function Signup() {
         console.warn("Storage error:", err);
       }
 
-      // Seamless redirect to Dashboard (port 3001) passing token
-      const dashboardUrl = `https://finora-dashboard-0jdh.onrender.com?token=${encodeURIComponent(
+      const isLocal =
+        typeof window !== "undefined" &&
+        (window.location.hostname === "localhost" ||
+          window.location.hostname === "127.0.0.1");
+
+      const dashboardBase = isLocal
+        ? "http://localhost:3001"
+        : process.env.REACT_APP_DASHBOARD_URL ||
+          "https://finora-dashboard-0jdh.onrender.com";
+
+      const dashboardUrl = `${dashboardBase}?token=${encodeURIComponent(
         token
       )}&user=${encodeURIComponent(JSON.stringify(user))}`;
 
