@@ -1,6 +1,6 @@
 # Finora
 
-Finora is a full-stack stock trading and investment platform built for managing and exploring trading activities through a modern web interface.
+Finora is a full-stack project created to practice and improve my React development skills while building a stock trading platform.
 
 ## 🚀 Live Demo
 
