@@ -25,6 +25,5 @@ Finora is a full-stack project created to practice and improve my React developm
 - Buy & Sell Actions
 - Portfolio Management
 - MongoDB Database
-- Backend API Integration
 - Responsive Design
 - Modern UI with Material UI
